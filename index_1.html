@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Best Friend - Dear Khushi 💕</title>
+<!-- Google Fonts for Love & Romance Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Calligraffitti&family=Clicker+Script&family=Great+Vibes&family=Italianno&family=Love+Light&family=Mea+Culpa&family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&family=Sacramento&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== Modern Reset & Variables ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #1a0b2e 0%, #2d1b3a 100%);
+    color: #f8e3f0;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ===== Romantic Gradient Background ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255, 105, 180, 0.2) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(147, 112, 219, 0.25) 0%, transparent 45%),
+      radial-gradient(circle at 40% 80%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
+      linear-gradient(135deg, #1e1029 0%, #2a1a33 50%, #1f1228 100%);
+    z-index: -2;
+  }
+
+  /* ===== Animated Background Particles ===== */
+  .particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 215, 215, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    box-shadow: 0 0 10px #ffb6c1;
+  }
+
+  /* ===== Section Styling ===== */
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 240, 245, 0.08);
+    border-radius: 40px;
+    margin: 20px 15px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 192, 203, 0.2) inset;
+    border: 1px solid rgba(255, 182, 193, 0.25);
+  }
+
+  section.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Glass morphism effect for content */
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent 60%);
+    border-radius: 40px;
+    z-index: -1;
+  }
+
+  /* ===== LOVE TYPOGRAPHY - Premium Romantic Fonts ===== */
+  h1 {
+    font-size: clamp(3em, 8vw, 5.5em);
+    font-family: 'Love Light', cursive;
+    font-weight: 400;
+    background: linear-gradient(135deg, #ffb6c1, #ffd700, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
+  h1::after {
+    content: "💕";
+    position: absolute;
+    animation: floatingHearts 2s ease-in-out infinite;
+    right: -70px;
+    top: -25px;
+    font-size: 2.2em;
+    filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.9));
+    -webkit-text-fill-color: initial;
+  }
+
+  @keyframes floatingHearts {
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+    50% { transform: translateY(-20px) scale(1.3) rotate(5deg); }
+  }
+
+  h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.2em, 5vw, 3.5em);
+    background: linear-gradient(135deg, #ffdab9, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .cursive-text-1 {
+    font-family: 'Allura', cursive;
+    font-size: 2em;
+    background: linear-gradient(135deg, #ffd700, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 10px 0;
+  }
+
+  .cursive-text-2 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.2em;
+    background: linear-gradient(135deg, #ffb6c1, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cursive-text-3 {
+    font-family: 'Tangerine', cursive;
+    font-size: 2.3em;
+    font-weight: 700;
+    color: #ffdab9;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+  }
+
+  .cursive-text-4 {
+    font-family: 'Italianno', cursive;
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #fff0f5, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cursive-text-5 {
+    font-family: 'Mea Culpa', cursive;
+    font-size: 2.2em;
+    color: #ffdab9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  p {
+    font-size: clamp(1.1em, 3vw, 1.4em);
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    line-height: 1.9;
+    color: #fce4f0;
+    background: rgba(255, 240, 245, 0.12);
+    padding: 25px 35px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  p span.romantic {
+    font-family: 'Bad Script', cursive;
+    font-size: 1.3em;
+    color: #ffd700;
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* ===== Professional Button Styling ===== */
+  button {
+    padding: 16px 38px;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    background: linear-gradient(135deg, #ff1493, #ff69b4, #ffb6c1);
+    color: white;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -8px rgba(255, 20, 147, 0.7);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: left 0.5s;
+  }
+
+  button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px -10px rgba(255, 20, 147, 0.9);
+    background: linear-gradient(135deg, #ff69b4, #ff1493, #ffb6c1);
+  }
+
+  button:hover::before {
+    left: 100%;
+  }
+
+  button:active {
+    transform: translateY(2px) scale(0.98);
+  }
+
+  /* ===== ENHANCED IMAGE GALLERY ===== */
+  .vip-photo-area {
+    margin: 30px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .vip-label {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8em;
+    background: linear-gradient(135deg, #ffd700, #ffb6c1, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+  }
+
+  /* Image Grid for Multiple Images */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  /* Individual Image Card */
+  .image-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+    border: 3px solid rgba(255, 215, 0, 0.4);
+    animation: cardGlow 3s infinite;
+    transition: all 0.4s ease;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    background: linear-gradient(145deg, #2a1a33, #1e1029);
+  }
+
+  .image-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: #ffd700;
+    box-shadow: 0 30px 60px -15px rgba(255, 215, 0, 0.6);
+  }
+
+  @keyframes cardGlow {
+    0%, 100% { border-color: rgba(255, 215, 0, 0.4); }
+    50% { border-color: rgba(255, 105, 180, 0.6); }
+  }
+
+  .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .image-card:hover img {
+    transform: scale(1.15);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 25px 15px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6em;
+    text-align: center;
+    backdrop-filter: blur(3px);
+  }
+
+  .image-card:hover .image-overlay {
+    transform: translateY(0);
+  }
+
+  .image-date {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    color: #ffd700;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* Featured Image (Larger) */
+  .featured-image {
+    grid-column: span 2;
+    aspect-ratio: 2/1;
+  }
+
+  @media (max-width: 768px) {
+    .featured-image {
+      grid-column: span 1;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  /* Image Caption */
+  .photo-caption {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5em;
+    color: #ffd700;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 25px;
+    border-radius: 60px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+
+  /* ===== Music Player VIP Area ===== */
+  .music-vip-area {
+    margin: 30px auto;
+    padding: 30px 25px;
+    background: rgba(255, 240, 245, 0.1);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 215, 0, 0.25);
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  }
+
+  .music-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffd700, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .music-note {
+    font-family: 'Allura', cursive;
+    font-size: 1.6em;
+    color: #ffdab9;
+    margin-bottom: 15px;
+  }
+
+  audio {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 40px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* ===== Enhanced Slide Container ===== */
+  .slide-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 25px;
+    padding: 30px 20px;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .slide-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slide-item {
+    min-width: min(320px, 85vw);
+    background: rgba(255, 240, 245, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    padding: 40px 25px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    scroll-snap-align: start;
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #fce4f0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .slide-item b {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5em;
+    background: linear-gradient(135deg, #ffd700, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .slide-item:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 30px 60px -15px rgba(255, 105, 180, 0.5);
+    background: rgba(255, 240, 245, 0.2);
+    border-color: #ffd700;
+  }
+
+  /* ===== Floating Hearts Animation ===== */
+  .heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .heart svg {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+  }
+
+  /* ===== Navigation Dots ===== */
+  .nav-dots {
+    position: fixed;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 100;
+  }
+
+  .nav-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  }
+
+  .nav-dot.active {
+    background: #ff1493;
+    transform: scale(1.4);
+    box-shadow: 0 0 20px #ff1493;
+    border-color: #ffd700;
+  }
+
+  .nav-dot:hover {
+    background: #ffb6c1;
+    transform: scale(1.3);
+  }
+
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    section {
+      margin: 10px 8px;
+      padding: 50px 15px;
+    }
+    
+    h1 {
+      font-size: 2.8em;
+    }
+    
+    h1::after {
+      right: -40px;
+      font-size: 1.8em;
+    }
+    
+    h2 {
+      font-size: 2.2em;
+    }
+    
+    p {
+      padding: 20px 20px;
+    }
+    
+    .nav-dots {
+      right: 12px;
+      gap: 12px;
+    }
+    
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+    }
+    
+    .slide-item {
+      min-width: 260px;
+      padding: 30px 20px;
+    }
+    
+    .image-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      padding: 40px 12px;
+    }
+    
+    h1 {
+      font-size: 2.2em;
+    }
+    
+    h1::after {
+      right: -25px;
+      font-size: 1.4em;
+      top: -10px;
+    }
+    
+    button {
+      padding: 14px 28px;
+      font-size: 1em;
+    }
+    
+    .nav-dots {
+      display: none;
+    }
+    
+    .image-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .vip-label {
+      font-size: 2.2em;
+    }
+    
+    .photo-caption {
+      font-size: 1.2em;
+    }
+  }
+
+  /* ===== Loading Animation ===== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  /* ===== Romantic Divider ===== */
+  .romantic-divider {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffd700, #ff69b4, #ffd700, transparent);
+    margin: 30px auto;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation Dots -->
+<div class="nav-dots">
+  <div class="nav-dot active" onclick="scrollToSection('welcome')"></div>
+  <div class="nav-dot" onclick="scrollToSection('about')"></div>
+  <div class="nav-dot" onclick="scrollToSection('special')"></div>
+  <div class="nav-dot" onclick="scrollToSection('memories')"></div>
+  <div class="nav-dot" onclick="scrollToSection('gallery')"></div>
+  <div class="nav-dot" onclick="scrollToSection('final')"></div>
+</div>
+
+<!-- Welcome Section -->
+<section class="active" id="welcome">
+  <h1>"Dear" <br/>🫶🏻          Khushi 🫶🏻</h1> 
+  <div class="cursive-text-2">My Forever Special One</div>
+  <div class="cursive-text-4">💕 Meri Zindagi Ki Roshni 💕</div>
+  <p>Tu Sirf Best Friend Nahi… Tu Mera Sabse Special Connection Hai 💙<br>
+  Jab sab chhod dete hain, tu sath hoti hai. Ye website sirf tmhare liye hai.<br>
+  <span class="romantic">"Har pal mein teri kami, har khushi mein tera saath"</span></p>
+  
+  <!-- VIP Music Area -->
+  <div class="music-vip-area">
+    <div class="music-label">🎵 MUSIC ZONE 🎵</div>
+    <div class="music-note">🫣 Ashiqui Song 🫣</div>
+    <!-- 👇 YAHAN APNA SONG FILE KA LINK DALEN 👇 -->
+    <audio controls>
+      <source src="https://image2url.com/r2/default/audio/1772220611968-1dd0cbba-684e-42d7-ab8f-30072582b6f2.mp3" type="audio/mpeg">
+    </audio>
+ 
+      <audio controls>
+      <source src="https://image2url.com/r2/default/audio/1772220380767-772430c0-6f74-43fe-85aa-c42db98692ca.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio controls>
+      <source src="https://image2url.com/r2/default/audio/1772220477401-d524d327-91db-4f2a-a8f3-1ec6d91b35c2.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div style="font-family: 'Poppins'; font-size: 0.9em; margin-top: 15px; color: #ffd700; letter-spacing: 1px;">♫ Play Karo ♫</div>
+  </div>
+  
+  <button onclick="scrollToSection('about')">Open 💫</button>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h1>Tu Kaun Hai?</h1>
+  <h2>Meri Zindagi Ka Tohfa</h2>
+  <div class="cursive-text-1">💝 Mere Dil Ki Dhadkan 💝</div>
+  <p>Tu meri life ka sabse unexpected gift hai...<br>
+  Tu meri safe place hai, meri smile ka reason hai. Tu woh insan hai jo mujhe judge nahi karti… bas samajhti hai.<br>
+  <span style="font-family: 'Tangerine'; font-size: 1.8em; color: #ffd700;">Tu hai toh main hoon</span></p>
+  
+  <div class="romantic-divider"></div>
+  
+  <!-- VIP Photo Area with MULTIPLE IMAGES -->
+  <div class="vip-photo-area">
+    <div class="vip-label">📸 VIP PHOTO GALLERY 📸</div>
+    
+    <!-- Image Grid - Multiple Images -->
+    <div class="image-grid">
+      
+      <!-- Image 1 - Featured/Main Image -->
+      <div class="image-card featured-image">
+        <img src="https://i.postimg.cc/76YtZLYc/IMG-20260226-153815.png" alt="Khushi Special 1" loading="lazy">
+        <div class="image-overlay">
+          ✨ Special Moment ✨
+          <div class="image-date">Hayee Tmhari Ankhein</div>
+        </div>
+      </div>
+      
+      <!-- Image 2 - Your Previous Image -->
+      <div class="image-card">
+        <img src="https://i.postimg.cc/tRvz79YZ/IMG-20260228-000817.jpg" alt="Khushi Special 2" loading="lazy">
+        <div class="image-overlay">
+          💕 Beautiful You 💕
+          <div class="image-date">Shehzadi</div>
+        </div>
+      </div>
+      
+      <!-- Image 3 - Placeholder for another image (Replace with your image) -->
+      <div class="image-card">
+        <img src="https://i.postimg.cc/3xT9QnyK/IMG-20260228-000843.jpg" alt="Khushi Special 3" loading="lazy">
+        <div class="image-overlay">
+          🌟 Our Memories 🌟
+          <div class="image-date">Special Day</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Image Caption -->
+    <div class="photo-caption">
+       💫 3 Special Memories 💫
+    </div>
+    
+    <!-- Note for adding more images -->
+    <div style="font-family: 'Poppins'; font-size: 0.9em; margin-top: 15px; color: #ffb6c1; background: rgba(0,0,0,0.2); padding: 8px 20px; border-radius: 50px; display: inline-block;">
+      ✨ 💖💖💖 ✨
+    </div>
+  </div>
+  
+  <button onclick="scrollToSection('special')">Next 💌</button>
+</section>
+
+<!-- Why Special Section -->
+<section id="special">
+  <h1>Kyu Tu Special Hai?</h1>
+  <h2>Dil Se Batein</h2>
+  <div class="cursive-text-3">💗 Mere Dil Ki Baat 💗</div>
+  <div class="slide-container">
+    <div class="slide-item"><b>🌟 SUNNE WALI</b> Tu meri har problem sunti hai</div>
+    <div class="slide-item"><b>🎭 HASAANE WALI</b> Tu mujhe hamesha hasati hai</div>
+    <div class="slide-item"><b>🏰 SAFE PLACE</b> Tu meri safe place hai, stress-free zone hai</div>
+    <div class="slide-item"><b>🤝 PARTNER</b> Tu mera “partner in crime” hai</div>
+    <div class="slide-item"><b>⚡ ENERGY</b> Tu mera energy booster hai</div>
+    <div class="slide-item"><b>💝 DIL</b> Tu mere dil ke kareeb hai</div>
+  </div>
+  <button onclick="scrollToSection('memories')">Next 🌟</button>
+</section>
+
+<!-- Memories Section -->
+<section id="memories">
+  <h1>Humari Yaadein</h1>
+  <h2>Kuch Pal Anmol Se</h2>
+  <div class="cursive-text-5">💕 Yaadein Dil Mein Basti Hain 💕</div>
+  <div class="slide-container">
+    <div class="slide-item"><b>💬 First Chat</b> Jab humne pehli baar baat ki thi… wo din yaad hai? <span style="font-family: 'Dancing Script';">22 November 2025 Time 12:28AM 🤭😁</span></div>
+    <div class="slide-item"><b>😄 Funniest Moment</b> Jab humne wahi joke repeat kiya aur poora din hasta raha</div>
+    <div class="slide-item"><b>🥺 Emotional Moment</b> Jab main udaas tha aur tu sath me khadi thi…</div>
+    <div class="slide-item"><b>🌙 Late Nights</b> Wo raat ki baatein, wo hasi-mazaak</div>
+  </div>
+  <button onclick="scrollToSection('final')">Next 💖</button>
+</section>
+
+<!-- Final Message Section -->
+<section id="final">
+  <h1>Naam Ki Zarurat Nahi</h1>
+  <h2>Dil Ka Rishta</h2>
+  <div class="cursive-text-1">💞 Hamesha Tera 💞</div>
+  <p>Har rishte ko naam dena zaruri nahi hota.<br>
+  Kuch log sirf dil me rehte hain, aur tu unme se ek hai.<br>
+  Tu sirf meri best friend nahi, tu meri dil ke kareeb hai 💙<br>
+  <span class="cursive-text-3" style="font-size: 2.2em;">Hamesha tera, hamesha tere liye</span></p>
+  
+  
+  <button onclick="scrollToSection('welcome')">Start Again ❤️</button>
+</section>
+
+<script>
+  // Smooth scroll function
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    const offset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+    
+    // Update active section
+    updateActiveSection(id);
+  }
+
+  // Update active section and navigation dots
+  function updateActiveSection(activeId) {
+    const sections = document.querySelectorAll('section');
+    const navDots = document.querySelectorAll('.nav-dot');
+    
+    sections.forEach(section => {
+      if (section.id === activeId) {
+        section.classList.add('active');
+      }
+    });
+    
+    navDots.forEach((dot, index) => {
+      const sectionIds = ['welcome', 'about', 'special', 'memories', 'gallery', 'final'];
+      if (sectionIds[index] === activeId) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  // Intersection Observer for sections
+  const sections = document.querySelectorAll('section');
+  const navDots = document.querySelectorAll('.nav-dot');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const activeId = entry.target.id;
+        
+        // Update sections
+        sections.forEach(section => {
+          if (section.id === activeId) {
+            section.classList.add('active');
+          }
+        });
+        
+        // Update nav dots
+        navDots.forEach((dot, index) => {
+          const sectionIds = ['welcome', 'about', 'special', 'memories', 'gallery', 'final'];
+          if (sectionIds[index] === activeId) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { 
+    threshold: 0.3,
+    rootMargin: '-80px 0px -80px 0px'
+  });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Enhanced floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="${getRandomColor()}" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    `;
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.top = window.innerHeight + 'px';
+    heart.style.animation = `floatHeart ${6 + Math.random() * 5}s linear forwards`;
+    document.body.appendChild(heart);
+    
+    setTimeout(() => heart.remove(), 9000);
+  }
+
+  function getRandomColor() {
+    const colors = ['#ff69b4', '#ff1493', '#ffb6c1', '#ffd700', '#ffa07a'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  // Add keyframe animation for hearts
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Create hearts at interval
+  setInterval(createHeart, 250);
+
+  // Create floating background particles
+  function createParticles() {
+    for (let i = 0; i < 40; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animation = `floatParticle ${20 + Math.random() * 25}s linear infinite`;
+      particle.style.animationDelay = Math.random() * 8 + 's';
+      document.body.appendChild(particle);
+    }
+  }
+
+  // Add particle animation
+  const particleStyle = document.createElement('style');
+  particleStyle.textContent = `
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(particleStyle);
+
+  // Initialize particles
+  createParticles();
+
+  // Parallax effect on scroll
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hearts = document.querySelectorAll('.heart');
+    hearts.forEach((heart, index) => {
+      const speed = 0.4 + (index % 4) * 0.2;
+      heart.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+  });
+
+  // Initial active section check
+  setTimeout(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      scrollToSection(hash);
+    }
+  }, 100);
+
+  // Image load messages
+  window.addEventListener('load', function() {
+    const images = document.querySelectorAll('.image-card img');
+    let loadedCount = 0;
+    images.forEach((img, index) => {
+      img.onload = function() {
+        loadedCount++;
+        console.log(`✅ Image ${index + 1} loaded successfully`);
+        if (loadedCount === images.length) {
+          console.log('🎉 All images loaded!');
+        }
+      };
+      img.onerror = function() {
+        console.log(`⚠️ Image ${index + 1} - placeholder will be shown`);
+      };
+    });
+  });
+</script>
+
+</body>
+</html>
