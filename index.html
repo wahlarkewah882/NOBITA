@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOBITA | PORTFOLIO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>NOBITA LEGEND | PORTFOLIO</title>
     
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
     
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -23,56 +23,95 @@
             background: #000;
             color: #fff;
             min-height: 100vh;
-            transition: background-color 0.4s ease;
+            transition: background-color 0.3s ease;
             overflow-x: hidden;
         }
 
         /* LIGHT MODE */
         body.light-mode {
-            background: #f5f5f5;
+            background: #f0f0f0;
             color: #111;
         }
 
         body.light-mode .theme-toggle {
             background: rgba(255,255,255,0.95);
-            border-color: gold;
+            border-color: #ff00ff;
         }
 
         body.light-mode .intro-card {
             background: rgba(255,255,255,0.95);
             color: #111;
-            border-color: gold;
+            border-color: #ff00ff;
         }
 
-        body.light-mode .learning-item {
+        body.light-mode .social-icon {
+            background: rgba(0,0,0,0.1);
             color: #333;
         }
 
-        body.light-mode .skill-badge {
-            background: gold;
-            color: #000;
-            border: 1px solid #000;
-        }
-
-        /* ===== CLEAN 4D BACKGROUND ===== */
+        /* ===== SIMPLIFIED SMOOTH BACKGROUND ===== */
         .vip-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2;
-            background: radial-gradient(ellipse at 50% 50%, #0a0a2a, #000);
+            z-index: -5;
+            background: radial-gradient(ellipse at 50% 50%, #0a001a, #000);
         }
 
-        /* SIMPLE STARS - NO LAG */
+        /* MINIMAL FIRE - SMOOTH */
+        .fire-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            z-index: -4;
+            pointer-events: none;
+            opacity: 0.25;
+        }
+
+        .fire-particle {
+            position: absolute;
+            bottom: 0;
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(to top, #ffaa00, #ff3300);
+            border-radius: 50% 50% 0 0;
+            filter: blur(1px);
+            animation: fireRise 3s infinite ease-out;
+            will-change: transform, opacity;
+        }
+
+        @keyframes fireRise {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-200px); opacity: 0; }
+        }
+
+        /* SIMPLE GRID - NO 3D */
+        .neon-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background-image: 
+                linear-gradient(rgba(255,215,0,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,215,0,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+
+        /* REDUCED STARS - SMOOTH */
         .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -2;
             pointer-events: none;
         }
 
@@ -80,8 +119,7 @@
             position: absolute;
             background: #fff;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255,255,255,0.5);
-            animation: twinkle 4s infinite alternate;
+            animation: twinkle 3s infinite alternate;
             will-change: opacity;
         }
 
@@ -90,36 +128,16 @@
             100% { opacity: 1; }
         }
 
-        /* ONE FLOATING ORB - SMOOTH */
-        .vip-orb {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.15), transparent 70%);
-            border-radius: 50%;
-            top: 20%;
-            right: -100px;
-            filter: blur(60px);
-            z-index: -1;
-            animation: orbMove 20s infinite alternate;
-            will-change: transform;
-        }
-
-        @keyframes orbMove {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-100px, 100px) scale(1.3); }
-        }
-
-        /* VIDEO BACKGROUND - LIGHTWEIGHT */
+        /* VIDEO BACKGROUND - LIGHTER */
         .video-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -3;
+            z-index: -6;
             overflow: hidden;
-            opacity: 0.4;
+            opacity: 0.2;
         }
 
         .video-bg video {
@@ -128,7 +146,7 @@
             object-fit: cover;
         }
 
-        /* ===== LOADING SCREEN ===== */
+        /* ===== LOADING SCREEN - WITH PROGRESS BAR ===== */
         #loader {
             position: fixed;
             top: 0;
@@ -140,15 +158,638 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 0.8s, visibility 0.8s;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
             padding: 20px;
         }
 
         .loader-box {
             width: 100%;
             max-width: 650px;
-            background: rgba(10,10,20,0.95);
+            background: rgba(10,10,20,0.98);
             backdrop-filter: blur(10px);
+            border: 2px solid #ff00ff;
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 0 50px #ff00ff;
+        }
+
+        .loader-title {
+            font-family: 'Black Ops One', cursive;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            text-align: center;
+            color: #ff00ff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+
+        .divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff00ff, #00ffff, #ff00ff, transparent);
+            margin: 20px 0;
+        }
+
+        .learning-header {
+            font-family: 'Black Ops One', cursive;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: #00ffff;
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 0 0 15px #00ffff;
+        }
+
+        .learning-list {
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+        }
+
+        .learning-item {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            margin-bottom: 10px;
+            color: #fff;
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .learning-item::before {
+            content: "🔥";
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+
+        .learning-item strong {
+            color: #ffaa00;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .loading-status {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            text-align: center;
+            margin: 20px 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        /* ===== NEW PROGRESS BAR ===== */
+        .progress-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 15px auto 20px auto;
+            text-align: center;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ff00ff;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        .progress-percent {
+            font-family: 'Orbitron', sans-serif;
+            color: #ffaa00;
+            font-size: 1.2rem;
+            margin-top: 8px;
+            text-shadow: 0 0 10px #ffaa00;
+        }
+
+        /* VIDEO DIV */
+        .video-div {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto 5px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 30px #ff00ff;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-div video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay-text {
+            display: none;
+        }
+
+        /* ===== THEME TOGGLE ===== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 2px solid #ff00ff;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+
+        .theme-text {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .toggle-switch {
+            width: 45px;
+            height: 22px;
+            background: #222;
+            border-radius: 40px;
+            position: relative;
+            border: 1px solid #ff00ff;
+        }
+
+        .toggle-slider {
+            width: 18px;
+            height: 18px;
+            background: #00ffff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+
+        body.light-mode .toggle-slider {
+            transform: translateX(23px);
+            background: #ff00ff;
+        }
+
+        /* ===== PROFILE SECTION ===== */
+        .profile-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 20px;
+        }
+
+        .intro-card {
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(15px);
+            border: 2px solid #ff00ff;
+            border-radius: 40px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 0 60px #ff00ff;
+            position: relative;
+            z-index: 10;
+        }
+
+        .intro-card::before {
+            display: none;
+        }
+
+        .name-title {
+            font-family: 'Black Ops One', cursive;
+            font-size: clamp(3rem, 8vw, 5rem);
+            text-align: center;
+            color: #ff00ff;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px #ff00ff;
+        }
+
+        .ram-title {
+            font-family: 'Black Ops One', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #ffaa00;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px #ffaa00;
+            letter-spacing: 2px;
+        }
+
+        .about-head {
+            font-family: 'Black Ops One', cursive;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #00ffff;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px #00ffff;
+        }
+
+        .detail-line {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin: 20px 0;
+            line-height: 1.7;
+            padding: 10px 15px;
+            border-left: 4px solid #ff00ff;
+            background: rgba(255,0,255,0.03);
+            border-radius: 0 20px 20px 0;
+        }
+
+        .detail-line strong {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+        }
+
+        .bullet {
+            color: #ffaa00;
+            font-size: 1.3rem;
+            margin-right: 10px;
+        }
+
+        .skills-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0 5px;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            font-family: 'Black Ops One', cursive;
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
+            font-weight: 900;
+            border: 1px solid #fff;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        /* ===== SOCIAL ICONS SECTION - FOOTER KE UPPER ===== */
+        .social-section {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            padding: 0 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-title {
+            font-family: 'Black Ops One', cursive;
+            color: #ffaa00;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px #ffaa00;
+            letter-spacing: 2px;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,0,255,0.1);
+            border: 2px solid #ff00ff;
+            border-radius: 50%;
+            color: #00ffff;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px #ff00ff;
+            backdrop-filter: blur(5px);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            background: #ff00ff;
+            color: #000;
+            box-shadow: 0 0 40px #ff00ff;
+            border-color: #fff;
+        }
+
+        /* TELEGRAM */
+        .social-icon .fa-telegram-plane:hover {
+            color: #fff;
+        }
+
+        /* WHATSAPP */
+        .social-icon .fa-whatsapp:hover {
+            color: #fff;
+        }
+
+        /* SNAPCHAT */
+        .social-icon .fa-snapchat-ghost:hover {
+            color: #fff;
+        }
+
+        /* INSTAGRAM */
+        .social-icon .fa-instagram:hover {
+            color: #fff;
+        }
+
+        .footer-text {
+            text-align: center;
+            padding: 25px;
+            font-family: 'Black Ops One', cursive;
+            color: #ff00ff;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            border-top: 1px solid #ff00ff;
+            margin-top: 10px;
+            text-shadow: 0 0 15px #ff00ff;
+        }
+
+        /* MAIN CONTENT */
+        #main-content {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .intro-card {
+                padding: 30px;
+            }
+            .detail-line {
+                font-size: 1rem;
+                padding: 8px 12px;
+            }
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-card {
+                padding: 25px;
+            }
+            .skill-badge {
+                padding: 6px 15px;
+            }
+            .social-icons {
+                gap: 15px;
+            }
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BACKGROUND LAYERS -->
+    <div class="vip-bg"></div>
+    <div class="fire-container" id="fireContainer"></div>
+    <div class="neon-grid"></div>
+    <div class="stars" id="stars"></div>
+    
+    <!-- VIDEO BACKGROUND -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/2072157/2072157-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- LOADING SCREEN WITH PROGRESS BAR -->
+    <div id="loader">
+        <div class="loader-box">
+            <div class="loader-title">🔥 NOBITA 🔥</div>
+            
+            <div class="divider"></div>
+            
+            <div class="learning-header">⚡ WHO IS NOBITA??? 🤔 ⚡</div>
+            
+            <div class="learning-list">
+                <div class="learning-item">Many ask <strong>Who is Nobita?</strong> to</div>
+                <div class="learning-item">Potential leader within a team or</div>
+                <div class="learning-item">Standing <strong>Who is Nobita?</strong> helps in</div>
+                <div class="learning-item">Dynamics and decision-making.</div>
+                <div class="learning-item">Indicate that the Nobita figure often.</div>
+                <div class="learning-item">Translate thinking and perspectives.</div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="loading-status">
+                <i class="fas fa-crown"></i> 
+               RESOURCES LOADING PLEASE WAIT...
+                <i class="fas fa-crown"></i>
+            </div>
+
+            <!-- ===== NEW PROGRESS BAR ===== -->
+            <div class="progress-container">
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-percent" id="progressPercent">0%</div>
+            </div>
+
+            <!-- VIDEO DIV -->
+            <div class="video-div">
+                <video autoplay muted loop playsinline>
+                    <source src="https://files.catbox.moe/v8trwd.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content">
+        <!-- THEME TOGGLE -->
+        <div class="theme-toggle" id="themeToggle">
+            <span class="theme-text" id="themeLabel">DARK</span>
+            <div class="toggle-switch">
+                <div class="toggle-slider"></div>
+            </div>
+        </div>
+
+        <!-- PROFILE CARD -->
+        <section class="profile-section">
+            <div class="intro-card">
+                <div class="name-title"> NOBITA </div>
+                <div class="ram-title">🚩 JAI SHREE RAM 🚩</div>
+                
+                <div class="about-head">⟡ ABOUT ME ⟡</div>
+                
+                <div class="detail-line">
+                    <span class="bullet">❖</span> 
+                    <strong>Hello Dear Myself Rahul. 21 Year Guy From UP (Lucknow).</strong><br>
+                    <span style="margin-left: 30px;">People Also Know Me as Nobita. 😊</span>
+                </div>
+                
+                <div class="detail-line">
+                    <span class="bullet">❍</span> 
+                    I'm Not Coder, I Have Some Knowledge. I Know Python, Js, Ts, HTML. 🥱🤡
+                </div>
+                
+                <div class="detail-line">
+                    <span class="bullet">❍</span> 
+                    I Like Python & Pyrogram Codes. 👨‍💻😌
+                </div>
+                
+                <div class="detail-line">
+                    <span class="bullet">❖</span> 
+                    <strong>My Skills :-</strong>
+                    <div class="skills-box">
+                        <span class="skill-badge">CODING</span>
+                        <span class="skill-badge">HACKING</span>
+                        <span class="skill-badge">COPYRIGHTER</span>
+                        <span class="skill-badge">TP BOT</span>
+                        <span class="skill-badge">WEB MAKING</span>
+                        <span class="skill-badge">RESPECT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SOCIAL ICONS SECTION (FOOTER KE UPPER) ===== -->
+        <div class="social-section">
+            <div class="social-title">😉 CONNECT WITH ME 😉</div>
+            <div class="social-icons">
+                <!-- Telegram -->
+                <a href="#" class="social-icon" target="_blank" id="telegramLink">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <!-- WhatsApp -->
+                <a href="#" class="social-icon" target="_blank" id="whatsappLink">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="social-icon" target="_blank" id="instagramLink">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-text">
+            <i class="fas fa-crown"></i>
+            NOBITA LEGEND | PORTFOLIO
+            <i class="fas fa-crown"></i>
+        </div>
+    </div>
+
+    <script>
+        // PROGRESS BAR ANIMATION
+        let progress = 0;
+        const progressFill = document.getElementById('progressFill');
+        const progressPercent = document.getElementById('progressPercent');
+        
+        const interval = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                
+                // LOADING SCREEN HIDE
+                setTimeout(() => {
+                    document.getElementById('loader').style.opacity = '0';
+                    document.getElementById('loader').style.visibility = 'hidden';
+                    document.getElementById('main-content').style.opacity = '1';
+                }, 500); // Extra 500ms for 100% dikhane ke liye
+                
+                return;
+            }
+            
+            progress += Math.random() * 4 + 2; // 2-6% increment
+            if (progress > 100) progress = 100;
+            
+            progressFill.style.width = progress + '%';
+            progressPercent.textContent = Math.floor(progress) + '%';
+        }, 150); // Har 150ms me update
+
+        // THEME TOGGLE
+        const themeToggle = document.getElementById('themeToggle');
+        const themeLabel = document.getElementById('themeLabel');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            themeLabel.textContent = body.classList.contains('light-mode') ? 'LIGHT' : 'DARK';
+        });
+
+        // GENERATE STARS
+        function createStars() {
+            const starsDiv = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                
+                if (i % 2 === 0) {
+                    star.style.background = '#ff00ff';
+                } else {
+                    star.style.background = '#00ffff';
+                }
+                
+                starsDiv.appendChild(star);
+            }
+        }
+        createStars();
+
+        // GENERATE FIRE
+        function createFire() {
+            const fireContainer = document.getElementById('fireContainer');
+            for (let i = 0; i < 25; i++) {
+                const fire = document.createElement('div');
+                fire.className = 'fire-particle';
+                fire.style.left = Math.random() * 100 + '%';
+                fire.style.animationDelay = Math.random() * 2 + 's';
+                fire.style.animationDuration = Math.random() * 1 + 2 + 's';
+                fireContainer.appendChild(fire);
+            }
+        }
+        createFire();
+
+        // AUTO PLAY VIDEOS
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.play().catch(() => {});
+        });
+
+        // ===== YAHAN APNE LINKS DALO =====
+        // Telegram link
+        document.getElementById('telegramLink').href = "http://t.me/II_NOBITA_II";
+        
+        // WhatsApp link (use https://wa.me/yournumber)
+        document.getElementById('whatsappLink').href = "http://wa.me/358454902945";
+        
+        // Instagram link
+        document.getElementById('instagramLink').href = "http://instagram.com/mingle_hu_vai";
+    </script>
+</body>
+</html>            backdrop-filter: blur(10px);
             border: 3px solid gold;
             border-radius: 40px;
             padding: 40px 30px;
